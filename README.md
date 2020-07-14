@@ -48,8 +48,10 @@ _Fitter's first sprint is aimed to be a fully functional web-based application. 
 |      React       | _Front-end._ |
 |   React Router   | _Front-end._ |
 | Ruby on Rails | _Back-end._ |
+| PostgreSQL | _Database Management._ |
+| Bcrypt | _Authentication._ |
 |     Axios     | _API Call._ |
-|     Nutrionix API     | _Rendering User activity._ |
+|     Nutrionix API     | _Calculating User activity._ |
 
 <br>
 
