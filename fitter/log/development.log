@@ -1,2 +1,4 @@
   [1m[35m (171.6ms)[0m  [1m[35mCREATE DATABASE "fitter_development" ENCODING = 'unicode'[0m
   [1m[35m (75.2ms)[0m  [1m[35mCREATE DATABASE "fitter_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "fitter_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "fitter_test" ENCODING = 'unicode'[0m
