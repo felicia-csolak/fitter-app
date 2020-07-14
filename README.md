@@ -57,13 +57,13 @@ _Fitter's first sprint is aimed to be a fully functional web-based application. 
 
 #### Wireframes
 
-![](https://github.com/felicia-csolak/fitter/blob/master/Fitter%20Wireframe.png?raw=true)
+![](Fitter%20Wireframe.png?raw=true)
 
 - Desktop, Mobile, and Tablet
 
 #### Component Tree
 
-![](https://github.com/felicia-csolak/fitter/blob/master/Fitter%20Flow%20Chart.png?raw=true)
+![](Fitter%20Flow%20Chart.png?raw=true)
 
 #### Component Hierarchy
 
@@ -132,7 +132,7 @@ src
 
 #### ERD Model
 
-![](https://github.com/felicia-csolak/fitter/blob/master/Fitter%20v1%20(1).png?raw=true)
+![](Fitter%20v1%20(1).png?raw=true)
 
 <br>
 
