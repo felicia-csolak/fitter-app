@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1
   def show
-    render json: @comment
+    render json: @comment, include: [:user, :post]
   end
 
   # POST /comments

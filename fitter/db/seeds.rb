@@ -11,7 +11,7 @@ Post.destroy_all
 Comment.destroy_all
 
 
-@felicia=User.create!(username:'felicia', email: 'myemail@email.com', password: '123456', location: 'nyc', age: 34)
+@felicia=User.create!(username:'felicia', email: 'myemail@email.com', password: '123456', location: 'nyc', age: 34, name: 'felicia c')
 
 @firstpost=Post.create!(title: 'cardio tuesday', content: 'I crushed my cycling session today!', exercise_type: 'Cycling', exercise_duration: '45min', calories: 300, user_id: @felicia.id)
 
