@@ -56,6 +56,6 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :content, :exercise_type, :exercise_duration, :calories_burned)
+      params.require(:post).permit(:title, :content, :user_id)
     end
 end

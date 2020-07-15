@@ -2395,3 +2395,42 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 3275)
 
 
+Started GET "/posts/13" for ::1 at 2020-07-15 17:11:05 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:54:in `set_post'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:13:in `show'
+Completed 200 OK in 84ms (Views: 37.0ms | ActiveRecord: 7.2ms | Allocations: 17180)
+
+
+Started GET "/posts/13/comments" for ::1 at 2020-07-15 17:11:11 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"post_id"=>"13"}
+  [1m[36mComment Load (2.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:8:in `index'
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 12.8ms | Allocations: 7653)
+
+
+  
+NoMethodError (undefined method `users' for #<Comment:0x00007fd13767c388>
+Did you mean?  user
+               user=):
+  
+app/controllers/comments_controller.rb:8:in `index'
+Started GET "/posts/13/comments" for ::1 at 2020-07-15 17:11:36 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"post_id"=>"13"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comments_controller.rb:8:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:8:in `index'
+Completed 200 OK in 29ms (Views: 21.1ms | ActiveRecord: 4.8ms | Allocations: 14954)
+
+
