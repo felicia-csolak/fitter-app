@@ -2581,3 +2581,13 @@ Processing by PostsController#show as */*
 Completed 200 OK in 160ms (Views: 32.0ms | ActiveRecord: 110.3ms | Allocations: 19515)
 
 
+Started GET "/rails/info/routes" for ::1 at 2020-07-15 17:48:55 -0400
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/feliciacsolak/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/feliciacsolak/.rvm/gems/ruby-2.7.1/gems/actionpack-6.0.3.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [38 times] (Duration: 30.9ms | Allocations: 5218)
+  Rendered /Users/feliciacsolak/.rvm/gems/ruby-2.7.1/gems/actionpack-6.0.3.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 9.4ms | Allocations: 889)
+  Rendered /Users/feliciacsolak/.rvm/gems/ruby-2.7.1/gems/railties-6.0.3.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 61.7ms | Allocations: 9218)
+Completed 200 OK in 85ms (Views: 69.9ms | ActiveRecord: 0.0ms | Allocations: 11048)
+
+

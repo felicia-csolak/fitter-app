@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
     end
   end
 
-  # POST /comments/1
+  # POST /post/1/
   def create_single
     @comment = Comment.new(comment_params)
     @post = Post.find(params[:post_id])
