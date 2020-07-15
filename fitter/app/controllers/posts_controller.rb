@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
-    render json: @post, include: [:user, :comments]
+    render json: @post, include: :user
   end
 
   # POST /posts
@@ -24,6 +24,14 @@ class PostsController < ApplicationController
     else
       render json: @post.errors, status: :unprocessable_entity
     end
+  end
+
+  # DELETE /posts/1
+  def destroy_single
+    @post = Post.new(post_params)
+    @user = User.find(params[:user_id])
+    @post.user = @user
+    @post.destroy
   end
 
   # PATCH/PUT /posts/1
@@ -48,6 +56,6 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :content, :exercise_type, :exercise_duration, :calories_burned, :user_id)
+      params.require(:post).permit(:title, :content, :exercise_type, :exercise_duration, :calories_burned)
     end
 end
