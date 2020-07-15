@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
 
-    render json: @posts
+    render json: @posts, include: :user
   end
 
   # GET /posts/1
@@ -16,6 +16,8 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
+    @user = User.find(params[:user_id])
+    @post.user = @user
 
     if @post.save
       render json: @post, status: :created, location: @post
@@ -46,6 +48,6 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :content, :exercise_type, :exercise_duration, :calories_burned)
+      params.require(:post).permit(:title, :content, :exercise_type, :exercise_duration, :calories_burned, :user_id)
     end
 end
