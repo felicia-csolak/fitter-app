@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Footer() {
+export default function User_Profile() {
     return (
         <div>
-            I'm the footer!
+            
         </div>
     )
 }

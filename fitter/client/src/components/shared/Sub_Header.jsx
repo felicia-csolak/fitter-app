@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Footer() {
+export default function Sub_Header() {
     return (
         <div>
-            I'm the footer!
+            
         </div>
     )
 }
