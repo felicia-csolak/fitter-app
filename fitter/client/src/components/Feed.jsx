@@ -49,8 +49,8 @@ class Feed extends Component {
                     ))}
                     </div>
                 </Route>
-                <Route path = '/post/:id'>
-            <Post/>
+                <Route path ='/post/:id'>
+            <Post />
         </Route>
             </>
         )

@@ -1,13 +1,12 @@
 import api from './api-config'
 
-
 export const getPosts = async () => {
   const response = await api.get('/posts')
   return response.data
 }
 
 export const getPost = async (id) => {
-  const response = await api.get(`/post/${id}`)
+  const response = await api.get(`/posts/${id}`)
   return response.data
 }
 
@@ -22,4 +21,4 @@ export const getComments = async (id) => {
 }
 
 
-
+export default api

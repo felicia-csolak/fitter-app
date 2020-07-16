@@ -4,14 +4,14 @@ import { withRouter } from 'react-router-dom'
 
 class Post extends Component {
     state = {
-        post: null
+        post: []
     }
 
     componentDidMount = async () => {
         const id = this.props.match.params.id
         const post = await getPost(id)
         this.setState({
-            post
+            post: []
         })
     }
     render() {
