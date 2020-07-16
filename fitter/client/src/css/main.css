@@ -1,0 +1,38 @@
+body {
+    background: #52796F
+}
+
+header {
+    background: #354f52;
+    height: 80px;
+    margin: -10px;
+    color: white;
+}
+
+.header-container {
+    display: flex;
+    align-items: baseline;
+}
+
+footer {
+    background: #354f52;
+    height: 55px;
+    color: white;
+    margin: -10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.main-logo {
+    font-family: 'Baloo 2', cursive;
+    font-size: 50px;
+    color: #CAD2C5;
+    margin-right: 20px;
+    margin-left: 10px
+}
+
+.tag-line {
+    font-family: 'Source Code Pro', monospace;
+    color: #CAD2C5;
+}

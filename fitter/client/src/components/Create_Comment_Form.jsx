@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Comments extends Component {
+export default class Create_Comment_Form extends Component {
     render() {
         return (
             <div>

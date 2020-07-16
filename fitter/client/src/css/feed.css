@@ -1,0 +1,64 @@
+.post-header {
+    background: #2f3e46;
+    color: white;
+    font-size: 16px;
+    display: inline-flex;
+    flex-direction: row;
+    align-content: space-around;
+    height: 40px;
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+    padding: 10px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.post-content {
+    display: flex;
+    background: #84A98C;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.post-footer {
+    background: #354f52;
+    color: #CAD2C5;
+    font-size: 12px;
+    display: flex;
+    align-content: center;
+    height: 30px;
+    line-height: 100%;
+    width: 100%;
+    border-radius: 0px 0px 20px 20px;
+    padding: 10px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+h3, h2 {
+    display: inline
+}
+
+a:link, a:visited {
+    color: #CAD2C5;
+    text-decoration: none;
+}
+
+.feed-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.post-feed-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin: 3%;
+}
