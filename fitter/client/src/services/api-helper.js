@@ -1,9 +1,20 @@
-import axios from 'axios';
+import api from './api-config'
 
-const baseUrl = 'http://localhost:3000'
 
-const api = axios.create({
-  baseURL: baseUrl
-})
+export const getPosts = async () => {
+  const response = await api.get('/posts')
+  return response.data
+}
 
-export default api;
+export const getPost = async (id) => {
+  const response = await api.get(`/post/${id}`)
+  return response.data
+}
+
+export const getUser = async (id) => {
+  const response = await api.get(`/users/${id}`)
+  return response.data
+}
+
+
+
