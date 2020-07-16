@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import '../../css/main.css'
+import Navigation from './Navigation'
+
 
 export default class extends Component {
+    constructor(props){
+        super()
+    }
     render() {
         return (
             <>
@@ -14,6 +19,12 @@ export default class extends Component {
                     COMMUNITY FOR THE FITNESS ENTHUSIASTS
                 </div>
                 </div>
+                <Navigation
+                    handleChange={this.props.handleChange}
+                    userData={this.props.userData}
+                    handleLogin={this.props.handleLogin}
+                    currentUser={this.props.currentUser}
+                    />
             </header>
             </>
         )
