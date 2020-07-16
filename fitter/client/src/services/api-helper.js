@@ -16,5 +16,10 @@ export const getUser = async (id) => {
   return response.data
 }
 
+export const getComments = async (id) => {
+  const response = await api.get(`/posts/${id}/comments`)
+  return response.data
+}
+
 
 

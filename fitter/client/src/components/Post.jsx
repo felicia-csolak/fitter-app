@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { getPost } from '../services/api-helper'
+import { withRouter } from 'react-router-dom'
 
-export default class Post extends Component {
+class Post extends Component {
     state = {
         post: null
     }
 
     componentDidMount = async () => {
-        const post = await getPost()
+        const id = this.props.match.params.id
+        const post = await getPost(id)
         this.setState({
             post
         })
@@ -20,3 +22,5 @@ export default class Post extends Component {
         )
     }
 }
+
+export default withRouter(Post)

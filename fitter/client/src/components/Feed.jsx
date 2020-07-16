@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Post from '../components/Post'
 import { getPosts } from '../services/api-helper'
 import { Link, Route, withRouter } from 'react-router-dom'
 import '../css/feed.css'
@@ -48,6 +49,9 @@ class Feed extends Component {
                     ))}
                     </div>
                 </Route>
+                <Route path = '/post/:id'>
+            <Post/>
+        </Route>
             </>
         )
     }
