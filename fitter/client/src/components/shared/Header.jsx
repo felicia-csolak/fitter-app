@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../../css/main.css'
 import Navigation from './Navigation'
+import { Link } from 'react-router-dom'
 
 
 export default class extends Component {
@@ -13,18 +14,20 @@ export default class extends Component {
             <header>
                 <div className="header-container">
                 <div className="main-logo">
-                FITTER
+                <Link to='/'>FITTER</Link>
                 </div>
                 <div className="tag-line">
                     COMMUNITY FOR THE FITNESS ENTHUSIASTS
                 </div>
-                </div>
+                <div className="navigation-container">
                 <Navigation
                     handleChange={this.props.handleChange}
                     userData={this.props.userData}
                     handleLogin={this.props.handleLogin}
                     currentUser={this.props.currentUser}
                     />
+                </div>
+                </div>
             </header>
             </>
         )
