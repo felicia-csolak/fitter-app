@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Main from './components/Main'
 import Header from './components/shared/Header'
+import Sub_Header from './components/shared/Sub_Header'
 import Footer from './components/shared/Footer'
 import { verifyUser, loginUser, registerUser } from './services/auth'
 import { withRouter } from 'react-router-dom'
@@ -31,7 +32,7 @@ class App extends Component {
     }))
   }
 
-  loginSubmit = async (e) => {
+  handleLogin = async (e) => {
     e.preventDefault()
     const currentUser = await loginUser(this.state.userData)
     this.setState({
@@ -54,8 +55,13 @@ class App extends Component {
         <Header 
           handleChange={this.handleChange}
           userData={this.state.userData}
-          handleLogin={this.loginSubmit}
+          handleLogin={this.handleLogin}
           currentUser={this.state.currentUser}
+        />
+        <Sub_Header 
+          handleChange={this.handleChange}
+          userData={this.state.userData}
+          handleRegister={this.handleRegister}
         />
         <Main />
         <Footer />

@@ -30,7 +30,7 @@ class Feed extends Component {
                         <React.Fragment>
                         <div className="post-feed-container">
                         <div className='post-header'>
-                            <Link to={`/post/${post.id}`}>
+                            <Link to={`/posts/${post.id}`}>
                             <div>@{post.user.username}</div>
                             <div>{post.title}</div>
                             <div>{post.updated_at}</div>
