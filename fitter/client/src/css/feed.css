@@ -13,14 +13,13 @@
 }
 
 .post-content {
-    display: flex;
+    display: block;
     background: #84A98C;
     color: white;
     font-size: 15px;
     width: 100%;
     padding: 10px;
     font-family: 'Open Sans', sans-serif;
-
 }
 
 .post-footer {

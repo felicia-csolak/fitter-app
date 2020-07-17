@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../../css/form.css'
+import '../../css/feed.css'
 
 export default class Sub_Header extends Component {
     constructor(props) {
@@ -13,10 +14,10 @@ export default class Sub_Header extends Component {
         <>
         <div className="sub-header-master-container">
             <div className="sub-header-container">
-                <div className="welcome">
-                    Welcome! Create an account to get started!
+                <div className="post-header">
             </div>
-                <div className="registration">
+                <div className="post-content">
+                    <div className="welcome">Welcome! Create an account to get started!</div>
                     <form onSubmit={this.props.handleRegister}>
                         <div className="registration-input">
                             <div className="form-left">
@@ -86,6 +87,7 @@ export default class Sub_Header extends Component {
                         <input type='submit' value="Register" />
                     </form>
                 </div>
+                <div className="post-footer"></div>
             </div>
             </div>
         </>
