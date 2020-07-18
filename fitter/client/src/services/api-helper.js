@@ -10,6 +10,11 @@ export const getPost = async (id) => {
   return response.data
 }
 
+export const createPost = async (postInfo) => {
+  const response = await api.post(`/posts`, { post: postInfo })
+  return response.data
+}
+
 export const getUser = async (id) => {
   const response = await api.get(`/users/${id}`)
   return response.data

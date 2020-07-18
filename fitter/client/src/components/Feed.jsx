@@ -32,11 +32,12 @@ class Feed extends Component {
                         <div className='post-header'>
                             <Link to={`/posts/${post.id}`}>
                             <div>@{post.user.username}</div>
-                            <div>{post.title}</div>
                             <div>{post.updated_at}</div>
                             </Link>
                         </div>
                         <div className="post-content">
+                            
+                            <div className="title">{post.title}</div>
                             <p>{post.content}</p>
                         </div>
                         <div className="post-footer">

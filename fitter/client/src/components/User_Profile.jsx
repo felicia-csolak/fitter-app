@@ -10,7 +10,7 @@ class User_Profile extends Component {
     }
 
     componentDidMount = async () => {
-        const id = parseInt(this.props.match.params.id)
+        const id = this.props.match.params.id
         const user = await getUser(id)
         this.setState({
             user

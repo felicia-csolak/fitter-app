@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { verifyUser } from './../../services/auth'
+import Create_Post_Form from '../Create_Comment_Form'
 import '../../css/form.css'
 import '../../css/feed.css'
 
@@ -7,17 +9,31 @@ export default class Sub_Header extends Component {
         super()
     }
     state = {
-
+        currentUser: null
     }
+
+    componentDidMount = async () => {
+        const currentUser = await verifyUser()
+        this.setState({
+          currentUser
+        })
+      }
+
     render() {
     return (
         <>
         <div className="sub-header-master-container">
+            {this.state.currentUser ? 
+            <Create_Post_Form 
+                currentUser={this.state.currentUser}
+                onChange={this.props.handleChange}
+            /> :
             <div className="sub-header-container">
                 <div className="post-header">
+                <div className="welcome">Welcome.</div> Create an account to get started!
             </div>
                 <div className="post-content">
-                    <div className="welcome">Welcome! Create an account to get started!</div>
+                    <div className="welcome"></div>
                     <form onSubmit={this.props.handleRegister}>
                         <div className="registration-input">
                             <div className="form-left">
@@ -89,6 +105,7 @@ export default class Sub_Header extends Component {
                 </div>
                 <div className="post-footer"></div>
             </div>
+    }
             </div>
         </>
     )
