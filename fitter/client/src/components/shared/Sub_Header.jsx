@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { verifyUser } from './../../services/auth'
-import Create_Post_Form from '../Create_Comment_Form'
+import Create_Post_Form from '../Create_Post_Form'
 import '../../css/form.css'
 import '../../css/feed.css'
 
@@ -24,7 +24,7 @@ export default class Sub_Header extends Component {
         <>
         <div className="sub-header-master-container">
             {this.state.currentUser ? 
-            <Create_Post_Form 
+            <Create_Post_Form handlePost={this.props.handlePost}
                 currentUser={this.state.currentUser}
                 onChange={this.props.handleChange}
             /> :
