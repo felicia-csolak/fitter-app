@@ -25,6 +25,7 @@ export default class extends Component {
                     userData={this.props.userData}
                     handleLogin={this.props.handleLogin}
                     currentUser={this.props.currentUser}
+                    handleLogout={this.props.handleLogout}
                     />
                 </div>
                 </div>

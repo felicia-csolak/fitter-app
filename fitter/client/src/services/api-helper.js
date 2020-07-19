@@ -10,8 +10,8 @@ export const getPost = async (id) => {
   return response.data
 }
 
-export const createPost = async (postInfo) => {
-  const response = await api.post(`/posts`, { post: postInfo })
+export const createPost = async (postData) => {
+  const response = await api.post(`/posts`, { post: postData })
   return response.data
 }
 

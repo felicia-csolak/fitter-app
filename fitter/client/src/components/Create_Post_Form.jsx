@@ -75,7 +75,7 @@ export default class Create_Comment_Form extends Component {
                         <br />
                             Calories: 
                             <input
-                                name='title'
+                                name='calories'
                                 type='text'
                                 value={this.state.post.calories}
                                 onChange={this.handleChange}

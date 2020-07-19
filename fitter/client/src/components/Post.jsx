@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { getPost } from '../services/api-helper'
 import { withRouter } from 'react-router-dom'
 import './../css/feed.css'
+import Comments from './Comments'
 
 class Post extends Component {
     state = {
@@ -14,6 +15,8 @@ class Post extends Component {
         this.setState({
             post
         })
+
+
     }
     render() {
         return (
@@ -37,6 +40,7 @@ class Post extends Component {
                         </div>
                         </div>
                         </div>
+                        {this.state.post.comments ? <Comments comments={this.state.post.comments} username={this.state.post.user.username}/> : <></>}
             </React.Fragment>
         )
     }

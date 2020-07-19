@@ -15,9 +15,12 @@ class Navigation extends Component {
         return (
             <>
                 {this.props.currentUser ?
+                <>
                     <Link to={`/users/${this.props.currentUser.id}`}>
                     <h2>@{this.props.currentUser.username}</h2>
-                    </Link> :
+                    </Link>
+                    <button onClick={this.props.handleLogout}>Logout</button></>
+                    :
                     <div className="login-form">
                         <form onSubmit={this.props.handleLogin} className='login'>
                             <div className="username-form-value">

@@ -24,10 +24,8 @@ export default class Sub_Header extends Component {
         <>
         <div className="sub-header-master-container">
             {this.state.currentUser ? 
-            <Create_Post_Form handlePost={this.props.handlePost}
-                currentUser={this.state.currentUser}
-                onChange={this.props.handleChange}
-            /> :
+            <></> :
+            <>
             <div className="sub-header-container">
                 <div className="post-header">
                 <div className="welcome">Welcome.</div> Create an account to get started!
@@ -104,7 +102,7 @@ export default class Sub_Header extends Component {
                     </form>
                 </div>
                 <div className="post-footer"></div>
-            </div>
+            </div></>
     }
             </div>
         </>

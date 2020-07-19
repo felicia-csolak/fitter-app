@@ -3,8 +3,7 @@ import Main from './components/Main'
 import Header from './components/shared/Header'
 import Sub_Header from './components/shared/Sub_Header'
 import Footer from './components/shared/Footer'
-import { verifyUser, loginUser, registerUser } from './services/auth'
-import { createPost } from './services/api-helper'
+import { verifyUser, loginUser, registerUser, removeToken } from './services/auth'
 import { withRouter } from 'react-router-dom'
 
 class App extends Component {
@@ -14,13 +13,6 @@ class App extends Component {
       password: '',
     },
     currentUser: null,
-    post: {
-      title: '',
-      content: '',
-      exercise_type: '',
-      exercise_duration: '',
-      calories: null
-    }
   }
 
   componentDidMount = async () => {
@@ -57,13 +49,15 @@ class App extends Component {
     this.props.history.push('/')
   }
 
-  handlePost = async (e) => {
-    e.preventDefault()
-    const post = await createPost(this.state.post)
+  handleLogout = () => {
     this.setState({
-      post
+      currentUser: null
     })
+    localStorage.removeItem('authToken');
+    removeToken();
+    this.props.history.push('/')
   }
+
 
   render() {
     return (
@@ -73,12 +67,12 @@ class App extends Component {
           userData={this.state.userData}
           handleLogin={this.handleLogin}
           currentUser={this.state.currentUser}
+          handleLogout={this.handleLogout}
         />
         <Sub_Header 
           handleChange={this.handleChange}
           userData={this.state.userData}
           handleRegister={this.handleRegister}
-          handlePost={this.handlePost}
         />
         <Main />
         <Footer />
