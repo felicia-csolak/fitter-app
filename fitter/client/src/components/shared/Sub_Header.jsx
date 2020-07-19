@@ -24,7 +24,7 @@ export default class Sub_Header extends Component {
         <>
         <div className="sub-header-master-container">
             {this.state.currentUser ? 
-            <></> :
+            <><Create_Post_Form currentUser={this.state.currentUser}/></> :
             <>
             <div className="sub-header-container">
                 <div className="post-header">

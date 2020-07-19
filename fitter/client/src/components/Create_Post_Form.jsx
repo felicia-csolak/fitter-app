@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './../css/form.css'
 import '../css/feed.css'
+import { verifyUser } from './../services/auth'
 
 export default class Create_Comment_Form extends Component {
     constructor(props) {
@@ -14,7 +15,8 @@ export default class Create_Comment_Form extends Component {
             exercise_duration: '',
             calories: null,
             user_id: null,
-        }
+        },
+        currentUser: null,
     }
 
     handleChange = (e) => {
@@ -27,9 +29,13 @@ export default class Create_Comment_Form extends Component {
         }))
       }
 
-      componentDidMount = () => {
+      componentDidMount = async () => {
           this.setState ({
              post: { user_id: this.props.currentUser.id }
+          })
+          const currentUser = await verifyUser()
+          this.setState({
+            currentUser
           })
       }
 
@@ -37,9 +43,10 @@ export default class Create_Comment_Form extends Component {
         return (
             <>
                 <div className="sub-header-container">
+                    {this.props.currentUser && (
                     <div className="post-header">
-                        Hi @{this.props.currentUser.username}!  Share your progress.
-                </div>
+                        Hi @{this.props.currentUser.username}!  Share your progress. 
+                </div>)}
                     <div className="post-content">
                         <form onSubmit={this.props.handlePost}>
                             Title:
