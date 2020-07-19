@@ -38,6 +38,7 @@ class App extends Component {
     this.setState({
       currentUser
     })
+    window.location.reload(false)
   }
 
   handleRegister = async (e) => {
@@ -55,7 +56,8 @@ class App extends Component {
     })
     localStorage.removeItem('authToken');
     removeToken();
-    this.props.history.push('/')
+    this.props.history.push('/') 
+    window.location.reload(false)
   }
 
 

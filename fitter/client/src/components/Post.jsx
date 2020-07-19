@@ -24,8 +24,8 @@ class Post extends Component {
                 <div className="feed-container">
               <div className="post-feed-container">
                         <div className='post-header'> 
-                        
-                            <div>@username here</div>
+                        {this.state.post.user && ( 
+                            <div>@{this.state.post.user.username}</div>)}
                             <div>{this.state.post.title}</div>
                             <div>{this.state.post.updated_at}</div>
                           
