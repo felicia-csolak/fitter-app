@@ -35,5 +35,10 @@ export const getComments = async (id) => {
   return response.data
 }
 
+export const createComment = async (id, commentData) => {
+  const response = await api.post(`/posts/${id}/comments`, { comment: commentData })
+  return response.data
+}
+
 
 export default api

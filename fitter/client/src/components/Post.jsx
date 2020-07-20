@@ -42,7 +42,7 @@ class Post extends Component {
                             <h3>{this.state.post.calories} kcal</h3>
                             <Link to={`/posts/${this.state.post.id}/edit`}><button>Edit Post</button></Link>
                             <button onClick={() => this.props.handlePostDelete(this.state.post.id)}>Delete</button>
-
+                            <Link to={`/posts/${this.state.post.id}/comments/add`}><button>Leave a comment</button></Link>
                         </div>
                     </div>
                 </div>
