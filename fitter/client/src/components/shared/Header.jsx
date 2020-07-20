@@ -21,11 +21,11 @@ export default class extends Component {
                 </div>
                 <div className="navigation-container">
                 <Navigation
-                    handleChange={this.props.handleChange}
                     userData={this.props.userData}
                     handleLogin={this.props.handleLogin}
                     currentUser={this.props.currentUser}
                     handleLogout={this.props.handleLogout}
+                    handleChange={this.props.handleChange}
                     />
                 </div>
                 </div>

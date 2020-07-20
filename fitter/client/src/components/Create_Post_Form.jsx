@@ -29,15 +29,6 @@ export default class Create_Comment_Form extends Component {
         }))
       }
 
-      componentDidMount = async () => {
-          this.setState ({
-             post: { user_id: this.props.currentUser.id }
-          })
-          const currentUser = await verifyUser()
-          this.setState({
-            currentUser
-          })
-      }
 
     render() {
         return (
@@ -48,7 +39,7 @@ export default class Create_Comment_Form extends Component {
                         Hi @{this.props.currentUser.username}!  Share your progress. 
                 </div>)}
                     <div className="post-content">
-                        <form onSubmit={this.props.handlePost}>
+                        <form onSubmit={(e) => {e.preventDefault();this.props.handlePostCreate(this.state.post)}}>
                             Title:
                         <input
                                 name='title'

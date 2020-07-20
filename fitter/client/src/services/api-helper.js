@@ -15,6 +15,16 @@ export const createPost = async (postData) => {
   return response.data
 }
 
+export const putPost = async (id, postData) => {
+  const response = await api.put(`/posts/${id}`, { post: postData })
+  return response.data;
+}
+
+export const deletePost = async (id) => {
+  const response = await api.delete(`/posts/${id}`);
+  return response
+}
+
 export const getUser = async (id) => {
   const response = await api.get(`/users/${id}`)
   return response.data

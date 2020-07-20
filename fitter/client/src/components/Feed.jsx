@@ -1,32 +1,25 @@
 import React, { Component } from 'react'
 import Post from '../components/Post'
-import { getPosts } from '../services/api-helper'
 import { Link, Route, withRouter } from 'react-router-dom'
+import { verifyUser } from '../services/auth'
 import '../css/feed.css'
 import '../css/main.css'
+import Create_Post_Form from '../components/Create_Post_Form'
 
 class Feed extends Component {
-    state = {
-        posts: null,
-        userData: {
-            username: '',
-            password: ''
-        },
-        currentUser: null
+    state ={
+        currentUser: ''
     }
+ 
 
-    componentDidMount = async () => {
-        const posts = await getPosts()
-        this.setState({
-            posts
-        })
-    }
     render() {
         return (
             <>
-                <Route exact path='/'>
                     <div className="feed-container">
-                    {this.state.posts && this.state.posts.map(post => (
+                      <Create_Post_Form 
+                        handlePostCreate={this.props.handlePostCreate}
+                        />
+                    {this.props.posts && this.props.posts.map(post => (
                         <React.Fragment>
                         <div className="post-feed-container">
                         <div className='post-header'>
@@ -36,7 +29,6 @@ class Feed extends Component {
                             </Link>
                         </div>
                         <div className="post-content">
-                            
                             <div className="title">{post.title}</div>
                             <p>{post.content}</p>
                         </div>
@@ -49,7 +41,6 @@ class Feed extends Component {
                         </React.Fragment>
                     ))}
                     </div>
-                </Route>
 
             </>
         )
