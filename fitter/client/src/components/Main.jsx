@@ -27,19 +27,22 @@ class Main extends Component {
         }))
     }
 
+    handlePostUpdate = async (postData) => {
+        let id
+        const updatePost = await putPost(id, postData);
+        this.setState(prevState => ({
+        posts: prevState.posts.map(post => post.id === parseInt(id) ? updatePost : post)
+        }))
+    }
+
+
     handlePostDelete = async (id) => {
         await deletePost(id)
         this.setState(prevState => ({
-          posts: prevState.posts.filter(post => post.id !== id)
+        posts: prevState.posts.filter(post => post.id !== id)
         }))
-      }
+    }
 
-    //   handlePostUpdate = async (postData) => {
-    //     const updatePost = await putPost(id, postData);
-    //     this.setState(prevState => ({
-    //       posts: prevState.posts.map(post => post.id === parseInt(id) ? updatePost : post)
-    //     }))
-    //   }
 
     render() 
     { 
@@ -49,6 +52,7 @@ class Main extends Component {
                 <Feed
                     handlePostCreate={this.handlePostCreate}
                     posts={this.state.posts}
+                    currentUser={this.props.currentUser}
                     />
             </Route>
             <Route path='/users/:id'>
@@ -57,17 +61,19 @@ class Main extends Component {
             <Route path ='/posts/:id'>
                 <Post
                     handlePostDelete={this.handlePostDelete}
+                    // handlePostUpdate={this.handlePostUpdate}
                     />
             </Route>
-            {/* <Route path='/posts/:id/edit' render={(props) => {
-                const { id } = props.match.params;
-                const postItem = this.state.posts.find(post => post.id === parseInt(id));
-                return <Edit_Post
-                        {...props}
-                        handlePostUpdate={this.handlePostUpdate}
-                        postItem={postItem}
-                        id={id}
-                    /> }} /> */}
+            <Route path='/posts/:id/edit' render={(props) => {
+            const { id } = props.match.params
+            const postItem = this.state.posts.find(post => post.id === parseInt(id));
+            return <Edit_Post
+            {...props}
+            handlePostUpdate={this.handlePostUpdate}
+            postItem={postItem}
+            id={id}
+          />
+        }} />
             </div>
         )
     }

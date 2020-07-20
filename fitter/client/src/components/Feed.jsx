@@ -18,13 +18,14 @@ class Feed extends Component {
                     <div className="feed-container">
                       <Create_Post_Form 
                         handlePostCreate={this.props.handlePostCreate}
+                        currentUser={this.props.currentUser}
                         />
                     {this.props.posts && this.props.posts.map(post => (
                         <React.Fragment>
                         <div className="post-feed-container">
                         <div className='post-header'>
                             <Link to={`/posts/${post.id}`}>
-                            <div>@{post.user.username}</div>
+                            <div>@{post.user && post.user.username}</div>
                             <div>{post.updated_at}</div>
                             </Link>
                         </div>

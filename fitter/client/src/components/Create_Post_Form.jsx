@@ -22,12 +22,12 @@ export default class Create_Comment_Form extends Component {
     handleChange = (e) => {
         const { name, value } = e.target;
         this.setState(prevState => ({
-          post: {
+            post: {
             ...prevState.post,
             [name]: value
-          }
+        }
         }))
-      }
+    }
 
 
     render() {

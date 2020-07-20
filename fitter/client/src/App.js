@@ -76,7 +76,9 @@ class App extends Component {
           userData={this.state.userData}
           handleRegister={this.handleRegister}
         />
-        <Main />
+        <Main 
+          currentUser={this.state.currentUser}
+        />
         <Footer />
       </>
     )
