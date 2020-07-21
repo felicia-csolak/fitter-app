@@ -4,6 +4,7 @@
     font-size: 16px;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-content: space-around;
     height: 40px;
     width: 100%;
@@ -13,7 +14,7 @@
 }
 
 .post-content {
-    display: block;
+
     background: #84A98C;
     color: white;
     font-size: 12px;
@@ -24,8 +25,27 @@
 }
 
 .post-photo {
-    width: 300px;
+    width: 200px;
     height: auto;
+    padding-left: 10px;
+}
+
+.post-content-container{
+    display:flex;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.post-photo-container {
+    display: flex;
+}
+
+.user-avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%
 }
 
 .post-footer {
@@ -73,5 +93,18 @@ a:link, a:visited {
     font-size: 20px;
     color: #CAD2C5;
     text-transform: uppercase
+}
+
+button {
+    border-radius: 20px;
+    height: 15px;
+    line-height: 15px;
+    width: 110px;
+    padding: 15px;
+    color: #CAD2C5;
+    text-decoration: none;
+    background: #354f52;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
 }
 

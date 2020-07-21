@@ -88,6 +88,7 @@ class App extends Component {
           handleChange={this.handleChange}
           userData={this.state.userData}
           handleRegister={this.handleRegister}
+          currentUser={this.state.currentUser}
         />
         <Main 
           currentUser={this.state.currentUser}

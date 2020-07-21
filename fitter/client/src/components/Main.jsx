@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Feed from './Feed'
 import Post from './Post'
 import User_Profile from './User_Profile'
-import { Link, Route, withRouter } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 import { createPost, deletePost, putPost, getPosts, createComment, getComments } from './../services/api-helper'
 import Edit_Post from './Edit_Post'
 import Create_Comment_Form from './Create_Comment_Form'
@@ -42,14 +42,16 @@ class Main extends Component {
         this.setState(prevState => ({
             posts: prevState.posts.map(post => post.id == parseInt(id) ? newPost : post)
         }))
+        this.props.history.push(`/posts/${id}`)
+        window.location.reload(false)
     }
-
 
     handlePostDelete = async (id) => {
         await deletePost(id)
         this.setState(prevState => ({
         posts: prevState.posts.filter(post => post.id !== id)
         }))
+        this.props.history.push("/")
     }
 
     handleCommentCreate = async (id, commentData) => {
@@ -58,8 +60,9 @@ class Main extends Component {
             // posts: prevState.posts.filter(post => post.id !== id),
             comments: [...prevState.comments, newComment]
         }))
+        this.props.history.push(`/posts/${id}/comments`)
+        window.location.reload(false)
     }
-
 
     render() 
     { 
@@ -82,23 +85,24 @@ class Main extends Component {
                     handlePostUpdate={this.handlePostUpdate}
                     />
             </Route>
-            <Route path='/posts/:id/edit' render={(props) => {
-                const {id} = props.match.params;
-                const postItem = this.state.posts.find(post => post.id === parseInt(id));
-                return <Edit_Post
-                            {...props}
-                            handlePostUpdate={this.handlePostUpdate}
-                            postItem={postItem}
-                            id={id}
-                        />
-                    }} />
             <Route path='/posts/:id/comments/add'>
                 <Create_Comment_Form
                     handleCommentCreate={this.handleCommentCreate}
                     currentUser={this.props.currentUser}
                     />
             </Route>
-                    
+            <Route path='/posts/:id/edit' render={(props) => {
+                const {id} = props.match.params;
+                const postItem = this.state.posts.find(post => post.id === parseInt(id));
+                return <>
+                    <Edit_Post
+                            {...props}
+                            handlePostUpdate={this.handlePostUpdate}
+                            postItem={postItem}
+                            id={id}
+                        />
+                        </>
+                    }} />
             </div>
         )
     }

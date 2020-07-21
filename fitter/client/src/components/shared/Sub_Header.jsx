@@ -27,7 +27,7 @@ export default class Sub_Header extends Component {
         return (
             <>
                 <div className="sub-header-master-container">
-                    {this.state.currentUser ?
+                    {this.props.currentUser ?
                         <>
                         </> :
                         <>
@@ -103,7 +103,7 @@ export default class Sub_Header extends Component {
                                         </label>
 
                                         <label htmlFor='avatar'>
-                                            Avatar:
+                                            Profile Avatar:
                                             <input
                                                 name='avatar_url'
                                                 type='text'

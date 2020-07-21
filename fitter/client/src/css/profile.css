@@ -16,3 +16,22 @@
     margin: 3%;
 }
 
+.profile-user-avatar {
+    border-radius: 50%;
+    max-width: 200px;
+    height: auto;
+}
+
+.profile-info h3 {
+    display: block;
+    padding-left: 20px;
+}
+
+.user-post-feed-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin: 3%;
+}

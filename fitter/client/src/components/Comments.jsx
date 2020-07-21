@@ -8,18 +8,18 @@ export default class Comments extends Component {
     render() {
         return (
             <>
-                     <div className="feed-container">
+                    <div className="feed-container">
                     {this.props.comments && this.props.comments.map(comment => (
-                        <React.Fragment>
+                        <React.Fragment key={this.props.comments.id}>
                         <div className="post-feed-container">
-                        <div className='post-header'>
-                            <Link to={``}>
-                    <div>@{this.props.username} commented at </div>
-                            <div>{comment.updated_at}</div>
-                            </Link>
-                        </div>
+                            <div className='post-header'>
+                                {this.props.comments.user_id}
+                                <Link to={`/users/${this.props.user_id}`}>
+                                    <div>@{this.props.username} commented at </div>
+                                    <div>{comment.updated_at}</div>
+                                </Link>
+                            </div>
                         <div className="post-content">
-                            
                             <p>{comment.content}</p>
                         </div>
                         <div className="post-footer">

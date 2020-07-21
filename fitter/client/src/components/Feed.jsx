@@ -16,27 +16,52 @@ class Feed extends Component {
         return (
             <>
                     <div className="feed-container">
-                      <Create_Post_Form 
-                        handlePostCreate={this.props.handlePostCreate}
-                        currentUser={this.props.currentUser}
-                        />
+                        {this.props.currentUser ? 
+                            <> 
+                            <Create_Post_Form 
+                                handlePostCreate={this.props.handlePostCreate}
+                                currentUser={this.props.currentUser}
+                            />
+                            </> : <></> }
                     {this.props.posts && this.props.posts.map(post => (
                         <React.Fragment>
                         <div className="post-feed-container">
                         <div className='post-header'>
                             <Link to={`/posts/${post.id}`}>
+                            <div>
+                                <img 
+                                    className="user-avatar" 
+                                    src={post.user.avatar_url} 
+                                    />
+                            </div>
                             <div>@{post.user && post.user.username}</div>
                             <div>{post.updated_at}</div>
                             </Link>
                         </div>
                         <div className="post-content">
-                            <div className="title">{post.title}</div>
-                            <p>{post.content}</p>
+                            <div className="title">
+                                {post.title}
+                            </div>
+                            <div className="post-content-container">
+                                <p>{post.content}</p>
+                            {post.photo_url ? 
+                                <div className="post-photo-container">
+                                <img 
+                                    className="post-photo" 
+                                    src={post.photo_url} />
+                                </div> : <></> }
+                            </div>
                         </div>
                         <div className="post-footer">
                             <h3>Format: {post.exercise_type}</h3>
                             <h3>Duration: {post.exercise_duration}</h3>
                             <h3>{post.calories} kcal</h3>
+                            <h3>
+                                <Link to={`/posts/${post.id}/comments`}>
+                                    Add a comment.
+                                </Link>
+                            </h3>
+                                
                         </div>
                         </div>
                         </React.Fragment>
