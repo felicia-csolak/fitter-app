@@ -15,6 +15,7 @@ export default class Create_Comment_Form extends Component {
             exercise_duration: '',
             calories: null,
             user_id: null,
+            photo_url: '',
         },
         currentUser: null,
     }
@@ -76,6 +77,14 @@ export default class Create_Comment_Form extends Component {
                                 name='calories'
                                 type='text'
                                 value={this.state.post.calories}
+                                onChange={this.handleChange}
+                            />
+                            < br/>
+                            Upload a Photo: 
+                            <input
+                                name='photo_url'
+                                type='text'
+                                value={this.state.post.photo_url}
                                 onChange={this.handleChange}
                             />
                             < br/>

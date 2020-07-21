@@ -13,6 +13,10 @@ class App extends Component {
       password: '',
     },
     currentUser: null,
+    loginUserData: {
+      username: '',
+      password: ''
+    }
   }
 
   componentDidMount = async () => {
@@ -32,13 +36,22 @@ class App extends Component {
     }))
   }
 
-  handleLogin = async (e) => {
-    e.preventDefault()
-    const currentUser = await loginUser(this.state.userData)
+  handleLogInChange = (e) => {
+    const { name, value } = e.target;
+    this.setState(prevState => ({
+      loginUserData: {
+        ...prevState.loginUserData,
+        [name]: value
+      }
+    }))
+  }
+
+  handleLogin = async () => {
+    console.log(this.state.loginUserData)
+    const currentUser = await loginUser(this.state.loginUserData)
     this.setState({
       currentUser
     })
-    window.location.reload(false)
   }
 
   handleRegister = async (e) => {
@@ -65,8 +78,8 @@ class App extends Component {
     return (
       <>
         <Header 
-          handleChange={this.handleChange}
-          userData={this.state.userData}
+          handleLogInChange={this.handleLogInChange}
+          loginUserData={this.state.loginUserData}
           handleLogin={this.handleLogin}
           currentUser={this.state.currentUser}
           handleLogout={this.handleLogout}

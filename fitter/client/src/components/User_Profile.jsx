@@ -20,7 +20,8 @@ class User_Profile extends Component {
     return (
         <div className='user-profile-master-container'>
             <div className="user-profile-container">
-    <div className="post-header">@{this.state.user.username}</div>
+    <div className="post-header">@{this.state.user.username} {this.state.user.avatar_url}</div>
+    
     <div className="post-content">
         <p>Joined: {this.state.user.created_at}</p>
         <p>Name: {this.state.user.name}</p>

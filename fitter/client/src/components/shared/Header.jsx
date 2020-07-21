@@ -21,8 +21,9 @@ export default class extends Component {
                 </div>
                 <div className="navigation-container">
                 <Navigation
-                    userData={this.props.userData}
+                    loginUserData={this.props.loginUserData}
                     handleLogin={this.props.handleLogin}
+                    handleLogInChange={this.props.handleLogInChange}
                     currentUser={this.props.currentUser}
                     handleLogout={this.props.handleLogout}
                     handleChange={this.props.handleChange}

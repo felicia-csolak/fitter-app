@@ -35,11 +35,14 @@ class Post extends Component {
                         </div>
                         <div className="post-content">
                             <p>{this.state.post.content}</p>
+                            {console.log(this.state.post.photo_url)}
+                            <img className="post-photo" src={this.state.post.photo_url} />
                         </div>
                         <div className="post-footer">
                             <h3>Format: {this.state.post.exercise_type}</h3>
                             <h3>Duration: {this.state.post.exercise_duration}</h3>
                             <h3>{this.state.post.calories} kcal</h3>
+                            
                             <Link to={`/posts/${this.state.post.id}/edit`}><button>Edit Post</button></Link>
                             <button onClick={() => this.props.handlePostDelete(this.state.post.id)}>Delete</button>
                             <Link to={`/posts/${this.state.post.id}/comments/add`}><button>Leave a comment</button></Link>

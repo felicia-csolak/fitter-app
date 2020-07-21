@@ -21,6 +21,8 @@ export default class Sub_Header extends Component {
     }
 
 
+
+
     render() {
         return (
             <>
@@ -40,7 +42,7 @@ export default class Sub_Header extends Component {
                                 <form onSubmit={this.props.handleRegister}>
                                     <div className="registration-input">
 
-                                        <lable htmlFor='name'>
+                                        <label htmlFor='name'>
                                             Name:
                                             <input
                                                 name='name'
@@ -48,9 +50,9 @@ export default class Sub_Header extends Component {
                                                 value={this.props.userData.name}
                                                 onChange={this.props.handleChange}
                                             />
-                                        </lable>
+                                        </label>
 
-                                        <lable htmlFor='age'>
+                                        <label htmlFor='age'>
                                             Age:
                                             <input
                                                 name='age'
@@ -58,9 +60,9 @@ export default class Sub_Header extends Component {
                                                 value={this.props.userData.age}
                                                 onChange={this.props.handleChange}
                                             />
-                                        </lable>
+                                        </label>
 
-                                        <lable htmlFor='location'>
+                                        <label htmlFor='location'>
                                             Location:
                                             <input
                                                 name='location'
@@ -68,9 +70,9 @@ export default class Sub_Header extends Component {
                                                 value={this.props.userData.location}
                                                 onChange={this.props.handleChange}
                                             />
-                                        </lable>
+                                        </label>
                                             
-                                        <lable htmlFor='username'>
+                                        <label htmlFor='username'>
                                             Username:
                                             <input
                                                 name='username'
@@ -78,9 +80,9 @@ export default class Sub_Header extends Component {
                                                 value={this.props.userData.username}
                                                 onChange={this.props.handleChange}
                                             />
-                                        </lable>
+                                        </label>
 
-                                        <lable htmlFor='email'>
+                                        <label htmlFor='email'>
                                             Email:
                                             <input
                                                 name='email'
@@ -88,9 +90,9 @@ export default class Sub_Header extends Component {
                                                 value={this.props.userData.email}
                                                 onChange={this.props.handleChange}
                                             />
-                                        </lable>
+                                        </label>
 
-                                        <lable htmlFor='password'>
+                                        <label htmlFor='password'>
                                             Password:
                                             <input
                                                 name='password'
@@ -98,7 +100,17 @@ export default class Sub_Header extends Component {
                                                 value={this.props.userData.password}
                                                 onChange={this.props.handleChange}
                                             />
-                                        </lable>
+                                        </label>
+
+                                        <label htmlFor='avatar'>
+                                            Avatar:
+                                            <input
+                                                name='avatar_url'
+                                                type='text'
+                                                value={this.props.userData.avatar_url}
+                                                onChange={this.props.handleChange}
+                                            />
+                                        </label>
                                             
                                     </div>
                                         <input type='submit' value="Register" />

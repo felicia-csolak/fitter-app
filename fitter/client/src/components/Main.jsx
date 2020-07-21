@@ -10,10 +10,11 @@ import Create_Comment_Form from './Create_Comment_Form'
 class Main extends Component {
     state = {
         posts: [],
-        comments: []
+        comments: [],
     }
 
     componentDidMount() {
+        console.log("Are you reading this?")
         this.showPosts()
         this.showComments()
     }
@@ -31,14 +32,15 @@ class Main extends Component {
     handlePostCreate = async (postData) => {
         const newPost = await createPost(postData)
         this.setState(prevState => ({
-            posts: [...prevState.posts, newPost]
+            posts: [...prevState.posts, newPost].reverse()
         }))
+        this.props.history.push("/")
     }
 
     handlePostUpdate = async (id, postData) => {
         const newPost = await putPost(id, postData)
         this.setState(prevState => ({
-        posts: prevState.posts.map(post => post.id == parseInt(id) ? newPost : post)
+            posts: prevState.posts.map(post => post.id == parseInt(id) ? newPost : post)
         }))
     }
 
@@ -53,6 +55,7 @@ class Main extends Component {
     handleCommentCreate = async (id, commentData) => {
         const newComment = await createComment(id, commentData)
         this.setState(prevState => ({
+            // posts: prevState.posts.filter(post => post.id !== id),
             comments: [...prevState.comments, newComment]
         }))
     }
@@ -92,6 +95,7 @@ class Main extends Component {
             <Route path='/posts/:id/comments/add'>
                 <Create_Comment_Form
                     handleCommentCreate={this.handleCommentCreate}
+                    currentUser={this.props.currentUser}
                     />
             </Route>
                     
