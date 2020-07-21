@@ -20,16 +20,13 @@ export default class Sub_Header extends Component {
         })
     }
 
-
-
-
     render() {
         return (
             <>
                 <div className="sub-header-master-container">
                     {this.props.currentUser ?
-                        <>
-                        </> :
+                        <></>
+                        :
                         <>
                             <div className="sub-header-container">
                                 <div className="post-header">

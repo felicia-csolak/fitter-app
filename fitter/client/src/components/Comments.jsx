@@ -22,8 +22,7 @@ export default class Comments extends Component {
                         <div className="post-content">
                             <p>{comment.content}</p>
                         </div>
-                        <div className="post-footer">
-                        </div>
+                        <div className="post-footer"></div>
                         </div>
                         </React.Fragment>
                     ))}

@@ -13,20 +13,20 @@ export default class extends Component {
             <>
             <header>
                 <div className="header-container">
-                <div className="main-logo">
-                <Link to='/'>FITTER</Link>
-                </div>
+                    <div className="main-logo">
+                        <Link to='/'>FITTER</Link>
+                    </div>
                 <div className="tag-line">
                     COMMUNITY FOR THE FITNESS ENTHUSIASTS
                 </div>
                 <div className="navigation-container">
-                <Navigation
-                    loginUserData={this.props.loginUserData}
-                    handleLogin={this.props.handleLogin}
-                    handleLogInChange={this.props.handleLogInChange}
-                    currentUser={this.props.currentUser}
-                    handleLogout={this.props.handleLogout}
-                    handleChange={this.props.handleChange}
+                    <Navigation
+                        loginUserData={this.props.loginUserData}
+                        handleLogin={this.props.handleLogin}
+                        handleLogInChange={this.props.handleLogInChange}
+                        currentUser={this.props.currentUser}
+                        handleLogout={this.props.handleLogout}
+                        handleChange={this.props.handleChange}
                     />
                 </div>
                 </div>

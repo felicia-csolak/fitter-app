@@ -3,11 +3,6 @@ import '../../css/main.css'
 import { Link, Route, withRouter } from 'react-router-dom'
 
 class Navigation extends Component {
-    state = {
-
-    }
-
-
 
     render() {
         return (
@@ -19,7 +14,7 @@ class Navigation extends Component {
                         </Link>
                         <button onClick={this.props.handleLogout}>
                             Logout
-                    </button>
+                        </button>
                     </>
                     :
                     <div className="login-form">

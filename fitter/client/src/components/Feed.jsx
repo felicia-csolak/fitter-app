@@ -10,29 +10,31 @@ class Feed extends Component {
     state ={
         currentUser: ''
     }
- 
 
     render() {
         return (
             <>
-                    <div className="feed-container">
-                        {this.props.currentUser ? 
-                            <> 
-                            <Create_Post_Form 
-                                handlePostCreate={this.props.handlePostCreate}
-                                currentUser={this.props.currentUser}
-                            />
-                            </> : <></> }
+                <div className="feed-container">
+                    {this.props.currentUser ? 
+                        <Create_Post_Form 
+                            handlePostCreate={this.props.handlePostCreate}
+                            currentUser={this.props.currentUser}
+                        />
+                        : 
+                        <></> 
+                    }
                     {this.props.posts && this.props.posts.map(post => (
-                        <React.Fragment>
+                        <React.Fragment id={post.id}>
                         <div className="post-feed-container">
                         <div className='post-header'>
                             <Link to={`/posts/${post.id}`}>
                             <div>
+                                {post.user.avatar_url ? 
                                 <img 
                                     className="user-avatar" 
                                     src={post.user.avatar_url} 
                                     />
+                                : <></> }   
                             </div>
                             <div>@{post.user && post.user.username}</div>
                             <div>{post.updated_at}</div>

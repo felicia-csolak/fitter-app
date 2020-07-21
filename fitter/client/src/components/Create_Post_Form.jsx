@@ -36,18 +36,27 @@ export default class Create_Comment_Form extends Component {
             <>
                 <div className="sub-header-container">
                     {this.props.currentUser && (
-                    <div className="post-header">
-                        Hi @{this.props.currentUser.username}!  Share your progress. 
-                </div>)}
+                        <div className="post-header">
+                            Hi @{this.props.currentUser.username}! Share your progress. 
+                        </div>
+                    )}
+                    
                     <div className="post-content">
-                        <form onSubmit={(e) => {e.preventDefault();this.props.handlePostCreate(this.state.post)}}>
-                            Title:
+                        <form 
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                this.props.handlePostCreate(this.state.post)
+                            }}>
+
+                        Title:
                         <input
                                 name='title'
                                 type='text'
                                 value={this.state.post.title}
                                 onChange={this.handleChange}
                             />
+                        <br />    
+
                         How'd it feel? What did you do?
                         <input
                                 name='content'
@@ -55,8 +64,8 @@ export default class Create_Comment_Form extends Component {
                                 value={this.state.post.content}
                                 onChange={this.handleChange}
                             />
-                        Activity Tracker 
                         <br />
+
                         Style of training: 
                         <input
                                 name='exercise_type'
@@ -64,31 +73,35 @@ export default class Create_Comment_Form extends Component {
                                 value={this.state.post.exercise_type}
                                 onChange={this.handleChange} />
                         <br />
+
                         Duration:
-                            <input
+                        <input
                                 name='exercise_duration'
                                 type='text'
                                 value={this.state.post.exercise_duration}
                                 onChange={this.handleChange}
                             />
                         <br />
-                            Calories: 
+
+                        Calories: 
                             <input
                                 name='calories'
                                 type='text'
                                 value={this.state.post.calories}
                                 onChange={this.handleChange}
                             />
-                            < br/>
-                            Upload a Photo: 
+                        < br/>
+
+                        Upload a Photo: 
                             <input
                                 name='photo_url'
                                 type='text'
                                 value={this.state.post.photo_url}
                                 onChange={this.handleChange}
                             />
-                            < br/>
-                            <input type='submit' value="Submit" />
+                        < br/>
+
+                        <input type='submit' value="Submit" />
                         </form>
                     </div>
                     <div className="post-footer"></div>

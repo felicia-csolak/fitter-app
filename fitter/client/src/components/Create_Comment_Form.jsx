@@ -38,7 +38,7 @@ class Create_Comment_Form extends Component {
                 <div className="sub-header-container">
                     {this.props.currentUser && (
                         <div className="post-header">
-                            Hi @{this.props.currentUser.username}!  Leave a comment.
+                            Hi @{this.props.currentUser.username}! Leave a comment.
                         </div>)}
                     <div className="post-content">
                         <form onSubmit={(e) => { e.preventDefault(); this.props.handleCommentCreate(this.state.comment.post_id, this.state.comment.content) }}>
