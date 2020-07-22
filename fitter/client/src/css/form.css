@@ -78,7 +78,6 @@ input {
     grid-template-columns: 1fr;
     width: 100%;
     float: right;
-    margin-right: -10%;
 }
 
 .registration-form-container {
