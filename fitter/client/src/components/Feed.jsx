@@ -1,57 +1,74 @@
 import React, { Component } from 'react'
 import Post from '../components/Post'
-import { getPosts } from '../services/api-helper'
 import { Link, Route, withRouter } from 'react-router-dom'
+import { verifyUser } from '../services/auth'
 import '../css/feed.css'
 import '../css/main.css'
+import Create_Post_Form from '../components/Create_Post_Form'
 
 class Feed extends Component {
-    state = {
-        posts: null,
-        userData: {
-            username: '',
-            password: ''
-        },
-        currentUser: null
+    state ={
+        currentUser: ''
     }
 
-    componentDidMount = async () => {
-        const posts = await getPosts()
-        this.setState({
-            posts
-        })
-    }
     render() {
         return (
             <>
-                <Route exact path='/'>
-                    <div className="feed-container">
-                    {this.state.posts && this.state.posts.map(post => (
-                        <React.Fragment>
+                <div className="feed-container">
+                    {this.props.currentUser ? 
+                        <Create_Post_Form 
+                            handlePostCreate={this.props.handlePostCreate}
+                            currentUser={this.props.currentUser}
+                        />
+                        : 
+                        <></> 
+                    }
+                    {this.props.posts && this.props.posts.map(post => (
+                        <React.Fragment id={post.id}>
                         <div className="post-feed-container">
                         <div className='post-header'>
                             <Link to={`/posts/${post.id}`}>
-                            <div>@{post.user.username}</div>
-                            <div>{post.title}</div>
+                            <>
+                                {post.user && post.user.avatar_url ? 
+                                <img 
+                                    className="user-avatar" 
+                                    src={post.user.avatar_url} 
+                                    />
+                                : <></> }
+                            </>
+                            <div>@{post.user && post.user.username}</div>
                             <div>{post.updated_at}</div>
                             </Link>
                         </div>
                         <div className="post-content">
-                            <p>{post.content}</p>
+                            <div className="title">
+                                {post.title}
+                            </div>
+                            <div className="post-content-container">
+                                <p>{post.content}</p>
+                            {post.photo_url ? 
+                                <div className="post-photo-container">
+                                <img 
+                                    className="post-photo" 
+                                    src={post.photo_url} />
+                                </div> : <></> }
+                            </div>
                         </div>
                         <div className="post-footer">
                             <h3>Format: {post.exercise_type}</h3>
                             <h3>Duration: {post.exercise_duration}</h3>
-                            <h3>{post.calories} kcal</h3>
+                            <h3>
+                                <Link to={`/posts/${post.id}/comments`}>
+                                    Add a comment.
+                                </Link>
+                            </h3>
+                                
                         </div>
                         </div>
                         </React.Fragment>
                     ))}
                     </div>
-                </Route>
-                <Route path ='/post/:id'>
-            <Post />
-        </Route>
+
             </>
         )
     }

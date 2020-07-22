@@ -1,9 +1,10 @@
 .post-header {
     background: #2f3e46;
-    color: white;
+    color: #CAD2C5;
     font-size: 16px;
-    display: inline-flex;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-content: space-around;
     height: 40px;
     width: 100%;
@@ -13,14 +14,38 @@
 }
 
 .post-content {
-    display: flex;
+
     background: #84A98C;
     color: white;
-    font-size: 15px;
+    font-size: 12px;
     width: 100%;
     padding: 10px;
     font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
 
+.post-photo {
+    width: 200px;
+    height: auto;
+    padding-left: 10px;
+}
+
+.post-content-container{
+    display:flex;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.post-photo-container {
+    display: flex;
+}
+
+.user-avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%
 }
 
 .post-footer {
@@ -62,3 +87,62 @@ a:link, a:visited {
     align-items: center;
     margin: 3%;
 }
+
+.title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 20px;
+    color: #CAD2C5;
+    text-transform: uppercase
+}
+
+button {
+    border-radius: 20px;
+    height: 15px;
+    line-height: 3px;
+    width: 110px;
+    padding: 15px;
+    color: #CAD2C5;
+    text-decoration: none;
+    background: #354f52;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+}
+
+.submit-button {
+        border-radius: 20px;
+        height: 15px;
+        line-height: 3px;
+        width: 110px;
+        padding: 15px;
+        color: #CAD2C5;
+        text-decoration: none;
+        background: #354f52;
+        font-family: 'Source Code Pro', monospace;
+        font-size: 10px;
+}
+
+.edit-comment-master-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.edit-comment-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin: 3%;
+}
+
+.comment-form-master-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
