@@ -1,0 +1,102 @@
+.sub-header-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin: 3%;
+}
+.sub-header-master-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+div {
+    font-family: 'Source Code Pro', monospace;
+    color: #CAD2C5;
+}
+
+.welcome {
+    font-family: 'Baloo 2', cursive;
+    font-size: 20px;
+    font-weight: lighter;
+    color: #CAD2C5;
+}
+
+.registration-input {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 20%
+}
+
+.form-right, .form-left {
+    display: block;
+
+}
+
+.create-post-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+   
+}
+
+.content-form {
+    grid-column: 1 / 3;
+    width: 86%;
+    height: 100px;
+}
+
+input {
+    width: 70%
+}
+
+.form-button {
+    border-radius: 20px;
+    height: 15px;
+    line-height: 3px;
+    width: 110px;
+    padding: 15px;
+    color: #CAD2C5;
+    text-decoration: none;
+    background: #354f52;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+}
+
+.login-form {
+    width: 20px;
+    line-height: 10px;
+    float: right;
+}
+
+.login-form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    float: right;
+    margin-right: -10%;
+}
+
+.registration-form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+
+.registration-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.login-input {
+    width: 10%;
+}
+
+form.login {
+    justify-content: right;
+    float: right;
+}
