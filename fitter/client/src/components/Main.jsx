@@ -15,7 +15,6 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        console.log("Are you reading this?")
         this.showPosts()
         this.showComments()
     }
@@ -35,6 +34,7 @@ class Main extends Component {
         this.setState(prevState => ({
             posts: [...prevState.posts, newPost].reverse()
         }))
+        window.location.reload(false)
         this.props.history.push("/")
     }
 
@@ -99,7 +99,7 @@ class Main extends Component {
                 const {id} = props.match.params;
                 const postItem = this.state.posts.find(post => post.id === parseInt(id));
                 return <>
-                    
+
                     <Edit_Post
                             {...props}
                             handlePostUpdate={this.handlePostUpdate}

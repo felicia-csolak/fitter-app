@@ -6,17 +6,18 @@ import './../css/feed.css'
 
 class User_Profile extends Component {
     state ={
-        user: []
+        user: ""
     }
 
-    componentDidMount = () => {
+    componentDidMount = async () => {
         const id = this.props.match.params.id
-        const user = getUser(id)
-        console.log("line 15")
+        const user = await getUser(id)
+        console.log(user)
         this.setState({
             user
         })
     }
+
     render() {
     return (
         <div className='user-profile-master-container'>
@@ -26,7 +27,7 @@ class User_Profile extends Component {
             </div>
     
     <div className="post-content">
-        <h1>@{this.state.user.username}</h1>
+        <h1>@{this.state.user && this.state.user.username}</h1>
         <div className="post-content-container">
         <img 
             className="profile-user-avatar" 
@@ -46,14 +47,12 @@ class User_Profile extends Component {
                        <div className="user-post-feed-container">
                         <div className='post-header'>
                         <Link to={`/posts/${post.id}`}>
-                            <div>
                                 <img 
                                     className="user-avatar" 
                                     src={this.state.user.avatar_url} 
                                     />
-                            </div>
-                            <div>@{post.username}</div>
-                            <div>{post.updated_at}</div>
+                            @{post.username}
+                            {post.updated_at}
                             </Link>
                         </div>
                         <div className="post-content">

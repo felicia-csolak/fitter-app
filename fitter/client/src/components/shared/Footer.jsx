@@ -4,7 +4,7 @@ import '../../css/main.css'
 export default function Footer() {
     return (
         <footer>
-            Created by Felicia Csolak.
+            <div className="footer-text">Created by Felicia Csolak</div>
         </footer>
     )
 }

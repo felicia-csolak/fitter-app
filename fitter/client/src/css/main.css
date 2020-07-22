@@ -32,10 +32,16 @@ footer {
     height: 55px;
     color: white;
     width: 100%;
-    bottom: 0 absolute;
-    align-content: center;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    text-align: center;
     font-size: xx-small;
     margin-bottom: -10px;
+}
+
+.footer-text {
+    margin-top: 20px;
 }
 
 .main-logo {

@@ -46,6 +46,7 @@ export default class Create_Comment_Form extends Component {
                             onSubmit={(e) => {
                                 e.preventDefault();
                                 this.props.handlePostCreate(this.state.post)
+                                
                             }}>
                         
                         Post Title:

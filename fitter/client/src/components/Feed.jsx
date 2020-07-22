@@ -36,8 +36,7 @@ class Feed extends Component {
                                     />
                                 : <></> }
                             </>
-                            <div>@{post.user && post.user.username}</div>
-                            <div>{post.updated_at}</div>
+                            @{post.user && post.user.username} posted at {post.updated_at}
                             </Link>
                         </div>
                         <div className="post-content">
@@ -55,13 +54,14 @@ class Feed extends Component {
                             </div>
                         </div>
                         <div className="post-footer">
-                            <h3>Format: {post.exercise_type}</h3>
-                            <h3>Duration: {post.exercise_duration}</h3>
-                            <h3>
+                            <div className="spacer"><h3>Format: {post.exercise_type}</h3></div>
+                            <div className="spacer"><h3>Duration: {post.exercise_duration}</h3></div>
+                            <div className="spacer"><h3>
                                 <Link to={`/posts/${post.id}/comments`}>
                                     Add a comment.
                                 </Link>
                             </h3>
+                            </div>
                                 
                         </div>
                         </div>
