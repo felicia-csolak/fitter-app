@@ -1,5 +1,11 @@
 import api from './api-config'
 
+const baseUrl = process.env.NODE_ENV === 'production' ? 'https://git.heroku.com/fitter-api.git' : 'http://localhost:3000' 
+
+const api = axios.create({
+  baseURL: baseUrl
+})
+
 export const getPosts = async () => {
   const response = await api.get('/posts')
   return response.data

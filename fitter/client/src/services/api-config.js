@@ -3,6 +3,7 @@ import Axios from 'axios'
 let apiUrl
 
 const apiUrls = {
+    production: 'https://git.heroku.com/fitter-api.git',
     development: 'http://localhost:3000/'
 }
 
