@@ -72,7 +72,6 @@ class User_Profile extends Component {
                         <div className="post-footer">
                             <h3>Format: {post.exercise_type}</h3>
                             <h3>Duration: {post.exercise_duration}</h3>
-                            <h3>{post.calories} kcal</h3>
                         </div>
                         </div>
                         </React.Fragment>

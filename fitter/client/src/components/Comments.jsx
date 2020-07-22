@@ -13,11 +13,14 @@ export default class Comments extends Component {
                         <React.Fragment key={this.props.comments.id}>
                         <div className="post-feed-container">
                             <div className='post-header'>
-                                {this.props.comments.user_id}
-                                <Link to={`/users/${this.props.user_id}`}>
-                                    <div>@{this.props.username} commented at </div>
+                                {this.props.currentUser && 
+                                <>
+                                <Link to={`/users/${this.props.currentUser.id}`}>
+                                    <div>@{this.props.currentUser.username} commented at </div>
                                     <div>{comment.updated_at}</div>
                                 </Link>
+                                </>
+                                }
                             </div>
                         <div className="post-content">
                             <p>{comment.content}</p>

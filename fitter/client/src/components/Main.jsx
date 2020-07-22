@@ -83,6 +83,7 @@ class Main extends Component {
                 <Post
                     handlePostDelete={this.handlePostDelete}
                     handlePostUpdate={this.handlePostUpdate}
+                    currentUser={this.props.currentUser}
                     />
             </Route>
             <Route path='/posts/:id/comments/add'>

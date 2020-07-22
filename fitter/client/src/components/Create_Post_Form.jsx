@@ -13,7 +13,6 @@ export default class Create_Comment_Form extends Component {
             content: '',
             exercise_type: '',
             exercise_duration: '',
-            calories: null,
             user_id: null,
             photo_url: '',
         },
@@ -40,14 +39,14 @@ export default class Create_Comment_Form extends Component {
                             Hi @{this.props.currentUser.username}! Share your progress. 
                         </div>
                     )}
-                    
+            
                     <div className="post-content">
                         <form 
                             onSubmit={(e) => {
                                 e.preventDefault();
                                 this.props.handlePostCreate(this.state.post)
                             }}>
-
+                        
                         Title:
                         <input
                                 name='title'
@@ -60,7 +59,7 @@ export default class Create_Comment_Form extends Component {
                         How'd it feel? What did you do?
                         <input
                                 name='content'
-                                type='text'
+                                type='textarea'
                                 value={this.state.post.content}
                                 onChange={this.handleChange}
                             />
@@ -83,14 +82,6 @@ export default class Create_Comment_Form extends Component {
                             />
                         <br />
 
-                        Calories: 
-                            <input
-                                name='calories'
-                                type='text'
-                                value={this.state.post.calories}
-                                onChange={this.handleChange}
-                            />
-                        < br/>
 
                         Upload a Photo: 
                             <input
