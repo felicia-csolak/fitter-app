@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import './../css/main.css'
+import './../css/feed.css'
 
 class Create_Comment_Form extends Component {
     constructor(props) {
@@ -35,6 +37,7 @@ class Create_Comment_Form extends Component {
     render() {
         return (
             <>
+            <div className="comment-form-master-container">
                 <div className="sub-header-container">
                     {this.props.currentUser && (
                         <div className="post-header">
@@ -49,10 +52,11 @@ class Create_Comment_Form extends Component {
                                 value={this.state.comment.content}
                                 onChange={this.handleChange}
                             />
-                            <input type='submit' value="Submit" />
+                            <input type='submit' value="Submit" className="submit-button" />
                         </form>
                     </div>
                     <div className="post-footer"></div>
+                </div>
                 </div>
             </>
         )

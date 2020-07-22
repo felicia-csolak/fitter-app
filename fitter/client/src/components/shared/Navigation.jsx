@@ -17,8 +17,9 @@ class Navigation extends Component {
                         </button>
                     </>
                     :
-                    <div className="login-form">
+                    <div className="login-form-container">
                         <form
+                            className="login-form"
                             onSubmit={(e) => {
                                 e.preventDefault();
                                 this.props.handleLogin()
@@ -32,6 +33,7 @@ class Navigation extends Component {
                                     type='text'
                                     value={this.props.loginUserData.username}
                                     onChange={this.props.handleLogInChange}
+                                    className="login-input"
                                 />
                             </lable>
 
@@ -42,10 +44,11 @@ class Navigation extends Component {
                                     type='password'
                                     value={this.props.loginUserData.password}
                                     onChange={this.props.handleLogInChange}
+                                    className="login-input"
                                 />
                             </lable>
 
-                            <input type='submit' value="Login" />
+                            <input type='submit' value="Login" className="form-button"/>
                         </form>
                     </div>
                 }

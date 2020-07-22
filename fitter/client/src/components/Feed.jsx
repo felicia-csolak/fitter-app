@@ -28,14 +28,14 @@ class Feed extends Component {
                         <div className="post-feed-container">
                         <div className='post-header'>
                             <Link to={`/posts/${post.id}`}>
-                            <div>
-                                {post.user.avatar_url ? 
+                            <>
+                                {post.user && post.user.avatar_url ? 
                                 <img 
                                     className="user-avatar" 
                                     src={post.user.avatar_url} 
                                     />
-                                : <></> }   
-                            </div>
+                                : <></> }
+                            </>
                             <div>@{post.user && post.user.username}</div>
                             <div>{post.updated_at}</div>
                             </Link>

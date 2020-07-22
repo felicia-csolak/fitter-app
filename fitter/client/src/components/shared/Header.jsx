@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../../css/main.css'
 import Navigation from './Navigation'
 import { Link } from 'react-router-dom'
+import logo from './../../logo/heart_logo.png'
 
 
 export default class extends Component {
@@ -14,7 +15,10 @@ export default class extends Component {
             <header>
                 <div className="header-container">
                     <div className="main-logo">
-                        <Link to='/'>FITTER</Link>
+                        <Link to='/'>
+                        <img src={logo} className="logo" />
+                        <span className="logo-text">FITTER</span>
+                        </Link>
                     </div>
                 <div className="tag-line">
                     COMMUNITY FOR THE FITNESS ENTHUSIASTS

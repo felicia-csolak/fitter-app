@@ -36,11 +36,15 @@ export default class Sub_Header extends Component {
                                     Create an account to get started!
                                 </div>
                             <div className="post-content">
-                                <form onSubmit={this.props.handleRegister}>
-                                    <div className="registration-input">
+                                <div className="registration-form-container">
+                                <form 
+                                    onSubmit={this.props.handleRegister}
+                                    className="registration-form"
+                                    >
+                                   
 
                                         <label htmlFor='name'>
-                                            Name:
+                                            Name: < br/>
                                             <input
                                                 name='name'
                                                 type='text'
@@ -50,7 +54,7 @@ export default class Sub_Header extends Component {
                                         </label>
 
                                         <label htmlFor='age'>
-                                            Age:
+                                            Age: < br/>
                                             <input
                                                 name='age'
                                                 type='text'
@@ -60,7 +64,7 @@ export default class Sub_Header extends Component {
                                         </label>
 
                                         <label htmlFor='location'>
-                                            Location:
+                                            Location: < br/>
                                             <input
                                                 name='location'
                                                 type='text'
@@ -70,7 +74,7 @@ export default class Sub_Header extends Component {
                                         </label>
                                             
                                         <label htmlFor='username'>
-                                            Username:
+                                            Username: < br/>
                                             <input
                                                 name='username'
                                                 type='text'
@@ -80,7 +84,7 @@ export default class Sub_Header extends Component {
                                         </label>
 
                                         <label htmlFor='email'>
-                                            Email:
+                                            Email: < br/>
                                             <input
                                                 name='email'
                                                 type='text'
@@ -90,7 +94,7 @@ export default class Sub_Header extends Component {
                                         </label>
 
                                         <label htmlFor='password'>
-                                            Password:
+                                            Password: < br/>
                                             <input
                                                 name='password'
                                                 type='password'
@@ -109,9 +113,10 @@ export default class Sub_Header extends Component {
                                             />
                                         </label>
                                             
-                                    </div>
-                                        <input type='submit' value="Register" />
+                                    
+                                        <input type='submit' value="Register" className="form-button"/>
                                     </form>
+                                    </div>
                                 </div>
                                 <div className="post-footer"></div>
                             </div>

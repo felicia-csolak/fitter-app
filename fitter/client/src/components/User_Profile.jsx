@@ -9,9 +9,10 @@ class User_Profile extends Component {
         user: []
     }
 
-    componentDidMount = async () => {
+    componentDidMount = () => {
         const id = this.props.match.params.id
-        const user = await getUser(id)
+        const user = getUser(id)
+        console.log("line 15")
         this.setState({
             user
         })

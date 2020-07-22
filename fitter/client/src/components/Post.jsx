@@ -50,8 +50,10 @@ class Post extends Component {
                                 {this.state.post.title}
                             </div>
                             <p>{this.state.post.content}</p>
-                            {console.log(this.state.post.photo_url)}
+                            {this.state.post.photo_url ?
                             <img className="post-photo" src={this.state.post.photo_url} />
+                            : <></>
+                            }
                         </div>
 
                         <div className="post-footer">
@@ -60,7 +62,7 @@ class Post extends Component {
                             
                             <Link to={`/posts/${this.state.post.id}/edit`}><button>Edit Post</button></Link>
                             <button onClick={() => this.props.handlePostDelete(this.state.post.id)}>Delete</button>
-                            <Link to={`/posts/${this.state.post.id}/comments/add`}><button>Leave a comment</button></Link>
+                            <Link to={`/posts/${this.state.post.id}/comments/add`}><button>Comment</button></Link>
                         </div>
                     </div>
                 </div>

@@ -41,13 +41,14 @@ export default class Create_Comment_Form extends Component {
                     )}
             
                     <div className="post-content">
-                        <form 
+                        <form
+                            className="create-post-form" 
                             onSubmit={(e) => {
                                 e.preventDefault();
                                 this.props.handlePostCreate(this.state.post)
                             }}>
                         
-                        Title:
+                        Post Title:
                         <input
                                 name='title'
                                 type='text'
@@ -55,15 +56,6 @@ export default class Create_Comment_Form extends Component {
                                 onChange={this.handleChange}
                             />
                         <br />    
-
-                        How'd it feel? What did you do?
-                        <input
-                                name='content'
-                                type='textarea'
-                                value={this.state.post.content}
-                                onChange={this.handleChange}
-                            />
-                        <br />
 
                         Style of training: 
                         <input
@@ -83,7 +75,7 @@ export default class Create_Comment_Form extends Component {
                         <br />
 
 
-                        Upload a Photo: 
+                        Sweaty selfie? Upload a Photo! 
                             <input
                                 name='photo_url'
                                 type='text'
@@ -92,7 +84,17 @@ export default class Create_Comment_Form extends Component {
                             />
                         < br/>
 
-                        <input type='submit' value="Submit" />
+                        How'd it feel? What did you do?
+                        <input
+                                name='content'
+                                type='textarea'
+                                value={this.state.post.content}
+                                onChange={this.handleChange}
+                                className="content-form"
+                            />
+                        <br />
+
+                        <input type='submit' value="Submit" className="form-button"/>
                         </form>
                     </div>
                     <div className="post-footer"></div>

@@ -5,6 +5,7 @@ import Sub_Header from './components/shared/Sub_Header'
 import Footer from './components/shared/Footer'
 import { verifyUser, loginUser, registerUser, removeToken } from './services/auth'
 import { withRouter } from 'react-router-dom'
+import './css/main.css'
 
 class App extends Component {
   state = {

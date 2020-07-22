@@ -6,6 +6,7 @@ import { Route, withRouter } from 'react-router-dom'
 import { createPost, deletePost, putPost, getPosts, createComment, getComments } from './../services/api-helper'
 import Edit_Post from './Edit_Post'
 import Create_Comment_Form from './Create_Comment_Form'
+import './../css/feed.css'
 
 class Main extends Component {
     state = {
@@ -84,6 +85,8 @@ class Main extends Component {
                     handlePostDelete={this.handlePostDelete}
                     handlePostUpdate={this.handlePostUpdate}
                     currentUser={this.props.currentUser}
+                    handleCommentCreate={this.handleCommentCreate}
+
                     />
             </Route>
             <Route path='/posts/:id/comments/add'>
@@ -96,6 +99,7 @@ class Main extends Component {
                 const {id} = props.match.params;
                 const postItem = this.state.posts.find(post => post.id === parseInt(id));
                 return <>
+                    
                     <Edit_Post
                             {...props}
                             handlePostUpdate={this.handlePostUpdate}

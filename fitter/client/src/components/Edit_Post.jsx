@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
+import './../css/feed.css'
 
 class Edit_Post extends Component {
     state = {
@@ -32,13 +33,18 @@ class Edit_Post extends Component {
     }
     render() {
         return (
-            <>
+            <div className="edit-comment-master-container">
+            <div className="edit-comment-container">
+            <div className='post-header'>
+            <h3>Edit Post Content</h3>
+                        </div>
+                        <div className="post-content">
             <form onSubmit={(e) => {
                 e.preventDefault();
                 this.props.handlePostUpdate(parseInt(this.props.id), this.state);
             }}>
 
-        <h3>Edit Post Content</h3>
+        
 
         <label forHTML="content">
         Content:
@@ -53,7 +59,10 @@ class Edit_Post extends Component {
 
         <button>Submit</button>
         </form>
-        </>
+        </div>
+        <div className="post-footer"></div>
+        </div>
+        </div>
         )
     }
 }
